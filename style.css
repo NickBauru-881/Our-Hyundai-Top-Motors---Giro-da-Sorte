@@ -1,0 +1,305 @@
+body {
+font-family: "Open Sans", sans-serif;
+font-style: normal;
+font-variation-settings: "wdth" 100;
+background: url('assets/FUNDO.png') no-repeat center center fixed;
+background-size: cover;
+margin: 0;
+padding: 0;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+min-height: 100vh;
+padding-top: 100px;
+text-align: center;
+}
+
+
+
+
+.logo {
+position: absolute;
+top: 20px;
+left: 20px;
+width: 250px;
+}
+
+
+
+
+h1 {
+color: #ffffff;
+margin-bottom: 20px;
+font-size: 28px;
+text-align: center;
+}
+
+
+
+
+.slot-machine {
+display: flex;
+gap: 10px;
+margin: 24px 0;
+justify-content: center;
+}
+
+
+
+
+.slot {
+width: 140px;
+height: 100px;
+border: 3px solid #a8a9a8;
+border-radius: 10px;
+background-color: #ffffff;
+overflow: hidden;
+position: relative;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.reel {
+position: absolute;
+top: 0;
+width: 100%;
+height: 500px;
+animation: none;
+}
+
+
+
+
+.display {
+display: flex;
+align-items: center;
+}
+
+
+
+
+.reel img {
+width: 100%;
+height: 100px;
+display: block;
+}
+
+
+
+
+.button {
+display: inline-block;
+background-color: #004c8c;
+color: white;
+border: none;
+padding: 12px 36px;
+border-radius: 6px;
+cursor: pointer;
+font-size: 18px;
+transition: background-color 0.3s ease;
+text-decoration: none;
+min-width: 280px;
+}
+
+
+
+
+.button:hover {
+background-color: #1083f7;
+}
+
+
+
+
+.result {
+margin-top: 20px;
+font-size: 20px;
+color: #fff;
+text-align: center;
+font-weight: bold;
+}
+
+
+
+
+.timer-container {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: none;
+align-items: center;
+justify-content: center;
+z-index: 1000;
+background-color: transparent;
+pointer-events: none;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+.timer-container.show {
+display: flex;
+opacity: 1;
+}
+
+
+
+
+#timer-text {
+position: relative;
+font-size: 32px;
+font-weight: bold;
+color: #ffffff;
+text-align: center;
+line-height: 1;
+margin: 0;
+}
+
+
+
+
+.legal {
+font-family: "Open Sans", sans-serif;
+font-style: normal;
+font-variation-settings: "wdth" 100;
+font-size: 10px;
+color: #fff;
+max-width: 600px;
+margin: 20px 20px;
+text-align: justify;
+line-height: 1.6;
+}
+
+
+
+
+@keyframes spin {
+0% { transform: translateY(0); }
+100% { transform: translateY(-300%); }
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 600px) and (orientation: portrait) {
+
+
+
+
+body {
+background: url('assets/MOBILE.png') no-repeat center center fixed;
+}
+
+
+
+
+
+
+
+
+.slot-machine {
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+  align-items: center;
+}
+
+
+
+
+.slot {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+
+
+
+h1 {
+  font-size: 24px;
+}
+
+
+
+
+.logo {
+  width: 90px;
+  top: 10px;
+  left: 10px;
+}
+
+
+
+
+.button {
+  width: 90%;
+  padding: 12px 0;
+}
+}
+
+
+
+
+@media (max-width: 500px) and (orientation: portrait) {
+
+
+
+
+body {
+background: url('assets/MOBILE.png') no-repeat center center fixed;
+}
+
+
+
+
+
+
+
+
+.slot-machine {
+  flex-direction:column;
+  align-items: center;
+}
+
+
+
+
+.slot {
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+
+
+
+h1 {
+  font-size: 24px;
+}
+
+
+
+
+.logo {
+  width: 90px;
+  top: 10px;
+  left: 10px;
+}
+
+
+
+
+.button {
+  width: 90%;
+  padding: 12px 0;
+}
+}
