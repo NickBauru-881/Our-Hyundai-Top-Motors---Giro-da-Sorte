@@ -14,9 +14,7 @@ const premios = [
 "Bônus / Desconto de R$3mil",
 "Bônus / Desconto de R$2mil",
 "Documento + IPVA Grátis",
-"R$3mil na avaliação do seu seminovo",
-"R$2mil na avaliação do seu seminovo",
-"1 ano de combustível grátis (1 tanque por mês)"
+"1 ano de combustível grátis (1 abastecimento a álcool/mês)"
 ];
 
 
