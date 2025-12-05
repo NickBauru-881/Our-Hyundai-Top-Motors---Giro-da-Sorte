@@ -10,9 +10,12 @@ const imagens = [
 
 
 const premios = [
-"Bônus / Desconto de R$3mil",
-"Bônus / Desconto de R$2mil",
-"1 tanque de combustível grátis (ao efetivar a compra)"
+ "Bônus / Desconto de R$5mil",
+ "Bônus / Desconto de R$3mil",
+ "Bônus / Desconto de R$2mil",
+ "Documento + IPVA Grátis",
+ "1 ano de combustível grátis (1 abastecimento a álcool/mês)"
+ "Até a tabela FIPE no seu Seminovo"
 ];
 
 
