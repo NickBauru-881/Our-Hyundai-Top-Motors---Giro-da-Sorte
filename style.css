@@ -1,305 +1,205 @@
 body {
-font-family: "Open Sans", sans-serif;
-font-style: normal;
-font-variation-settings: "wdth" 100;
-background: url('assets/FUNDO.png') no-repeat center center fixed;
-background-size: cover;
-margin: 0;
-padding: 0;
-position: relative;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-min-height: 100vh;
-padding-top: 100px;
-text-align: center;
+ font-family: "Open Sans", sans-serif;
+ font-style: normal;
+ background: url('assets/FUNDO.png') no-repeat center center fixed;
+ background-size: cover;
+ margin: 0;
+ padding: 0;
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: flex-start;
+ min-height: 100vh;
+ padding-top: 60px; /* Reduzi um pouco para caber melhor no mobile */
+ text-align: center;
+ overflow-x: hidden; /* Evita rolagem lateral indesejada */
 }
-
-
-
 
 .logo {
-position: absolute;
-top: 20px;
-left: 20px;
-width: 250px;
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ width: 180px; /* Otimizado para telas menores */
+ z-index: 10;
 }
-
-
-
 
 h1 {
-color: #ffffff;
-margin-bottom: 20px;
-font-size: 28px;
-text-align: center;
+ color: #ffffff;
+ margin-bottom: 20px;
+ font-size: 28px;
+ text-align: center;
 }
 
+/* --- ESTILOS DA CAMPANHA DE JANEIRO --- */
+.titulo-janeiro {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 32px;
+  line-height: 1.1;
+  color: #ffffff !important;
+  margin-bottom: 20px;
+  text-shadow: 0px 3px 6px rgba(0,0,0,0.6);
+  letter-spacing: -1px;
+  padding: 0 15px;
+  z-index: 5;
+}
 
+.titulo-janeiro .destaque {
+  color: #00AAD2 !important; /* Azul Cyan Hyundai */
+}
 
-
+/* --- ESTRUTURA DA ROLETA --- */
 .slot-machine {
-display: flex;
-gap: 10px;
-margin: 24px 0;
-justify-content: center;
+ display: flex;
+ gap: 10px;
+ margin: 20px 0;
+ justify-content: center;
+ z-index: 5;
 }
-
-
-
 
 .slot {
-width: 140px;
-height: 100px;
-border: 3px solid #a8a9a8;
-border-radius: 10px;
-background-color: #ffffff;
-overflow: hidden;
-position: relative;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ width: 130px; /* Levemente menor para garantir que 3 caibam em mobiles pequenos */
+ height: 100px;
+ border: 3px solid #a8a9a8;
+ border-radius: 10px;
+ background-color: #ffffff;
+ overflow: hidden;
+ position: relative;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-
-
-
 
 .reel {
-position: absolute;
-top: 0;
-width: 100%;
-height: 500px;
-animation: none;
+ position: absolute;
+ top: 0;
+ width: 100%;
+ height: 500px; /* Garante espaço para a animação */
 }
-
-
-
-
-.display {
-display: flex;
-align-items: center;
-}
-
-
-
 
 .reel img {
-width: 100%;
-height: 100px;
-display: block;
+ width: 100%;
+ height: 100px; /* Altura exata do slot para centralizar */
+ object-fit: contain; /* Garante que o carro não fique esticado */
+ display: block;
+ padding: 5px; /* Respiro interno */
+ box-sizing: border-box;
 }
 
-
-
-
+/* --- BOTÕES E INTERAÇÃO --- */
 .button {
-display: inline-block;
-background-color: #004c8c;
-color: white;
-border: none;
-padding: 12px 36px;
-border-radius: 6px;
-cursor: pointer;
-font-size: 18px;
-transition: background-color 0.3s ease;
-text-decoration: none;
-min-width: 280px;
+ display: inline-block;
+ background: linear-gradient(180deg, #004c8c 0%, #003366 100%); /* Degradê mais premium */
+ color: white;
+ border: none;
+ padding: 15px 40px;
+ border-radius: 50px; /* Botão arredondado é mais moderno */
+ cursor: pointer;
+ font-size: 20px;
+ font-weight: bold;
+ text-transform: uppercase;
+ box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+ transition: transform 0.2s, box-shadow 0.2s;
+ text-decoration: none;
+ min-width: 280px;
+ z-index: 5;
 }
 
-
-
-
-.button:hover {
-background-color: #1083f7;
+.button:active {
+ transform: scale(0.95);
 }
-
-
-
 
 .result {
-margin-top: 20px;
-font-size: 20px;
-color: #fff;
-text-align: center;
-font-weight: bold;
+ margin-top: 20px;
+ font-size: 20px;
+ color: #fff;
+ text-align: center;
+ font-weight: bold;
+ text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+ min-height: 30px;
+ z-index: 5;
 }
 
-
-
-
+/* --- OVERLAY DO TIMER (CORRIGIDO) --- */
 .timer-container {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 1000;
-background-color: transparent;
-pointer-events: none;
-opacity: 0;
-transition: opacity 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 44, 95, 0.98); /* Azul Hyundai sólido */
+  display: none; /* JS controla isso */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000; /* Máxima prioridade */
+  backdrop-filter: blur(5px); /* Efeito moderno de desfoque */
 }
-
-
-
 
 .timer-container.show {
-display: flex;
-opacity: 1;
+  display: flex;
 }
-
-
-
 
 #timer-text {
-position: relative;
-font-size: 32px;
-font-weight: bold;
-color: #ffffff;
-text-align: center;
-line-height: 1;
-margin: 0;
+  font-size: 50px;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 30px;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-variant-numeric: tabular-nums; /* Evita que os números "pulem" na contagem */
 }
-
-
-
 
 .legal {
-font-family: "Open Sans", sans-serif;
-font-style: normal;
-font-variation-settings: "wdth" 100;
-font-size: 10px;
-color: #fff;
-max-width: 600px;
-margin: 20px 20px;
-text-align: justify;
-line-height: 1.6;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 800px;
+  margin: 40px auto 20px;
+  padding: 0 20px;
+  line-height: 1.4;
 }
 
-
-
-
+/* --- ANIMAÇÃO --- */
 @keyframes spin {
-0% { transform: translateY(0); }
-100% { transform: translateY(-300%); }
+ 0% { transform: translateY(0); }
+ 100% { transform: translateY(-300px); } /* Ajustado para -300px (3 imagens) */
 }
 
+/* --- RESPONSIVO --- */
+@media (max-width: 600px) {
+ body {
+   background: url('assets/MOBILE.png') no-repeat center top fixed;
+   background-size: cover;
+   padding-top: 80px;
+ }
 
+ .logo {
+   width: 120px;
+   left: 50%;
+   transform: translateX(-50%); /* Centraliza logo no mobile */
+ }
+ 
+ .titulo-janeiro {
+    font-size: 22px;
+    margin-top: 10px;
+ }
 
+ .slot-machine {
+   gap: 5px;
+ }
 
-/* Responsivo */
-@media (max-width: 600px) and (orientation: portrait) {
+ .slot {
+   width: 30vw; /* Usa largura da tela para não quebrar */
+   height: 80px; /* Slots menores no celular */
+ }
+ 
+ .reel img {
+    height: 80px;
+ }
 
-
-
-
-body {
-background: url('assets/MOBILE.png') no-repeat center center fixed;
-}
-
-
-
-
-
-
-
-
-.slot-machine {
-  display: flex;
-  justify-content: center;
-  flex-direction:row;
-  align-items: center;
-}
-
-
-
-
-.slot {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-bottom: 10px;
-}
-
-
-
-
-h1 {
-  font-size: 24px;
-}
-
-
-
-
-.logo {
-  width: 90px;
-  top: 10px;
-  left: 10px;
-}
-
-
-
-
-.button {
-  width: 90%;
-  padding: 12px 0;
-}
-}
-
-
-
-
-@media (max-width: 500px) and (orientation: portrait) {
-
-
-
-
-body {
-background: url('assets/MOBILE.png') no-repeat center center fixed;
-}
-
-
-
-
-
-
-
-
-.slot-machine {
-  flex-direction:column;
-  align-items: center;
-}
-
-
-
-
-.slot {
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-
-
-
-h1 {
-  font-size: 24px;
-}
-
-
-
-
-.logo {
-  width: 90px;
-  top: 10px;
-  left: 10px;
-}
-
-
-
-
-.button {
-  width: 90%;
-  padding: 12px 0;
-}
+ .button {
+   width: 90%;
+   font-size: 18px;
+ }
 }
