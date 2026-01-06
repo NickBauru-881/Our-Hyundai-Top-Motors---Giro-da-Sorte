@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Roleta da Sorte Hyundai</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+ <title>Giro da Sorte Hyundai Top Motors</title>
+ 
+ <link rel="preload" as="image" href="assets/MOBILE.png" media="(max-width: 600px)">
+ <link rel="preload" as="image" href="assets/FUNDO.png" media="(min-width: 601px)">
+
+ <link rel="stylesheet" href="style.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+ 
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-<audio id="audio-spin" src="assets/sound/spin.mp3" preload="auto"></audio>
-<img src="assets/Logo lateral_Branca (1) (1).png" alt="Hyundai Logo" class="logo" />
-<h1>Giro da Sorte - Hyundai Top Motors</h1>
-<div class="slot-machine">
-  <div class="slot" id="slot1"><div class="reel"></div></div>
-  <div class="slot" id="slot2"><div class="reel"></div></div>
-  <div class="slot" id="slot3"><div class="reel"></div></div>
-</div>
-<button class="button" onclick="girar()">Girar Roleta</button>
-<div class="result" id="resultado"></div>
-<div id="timer-container">
-<div id="timer-text">30:00</div>
-<div style="margin-top: 20px;">
-<a id="cta" href="#" class="button" style="display: none;" target="_blank">
-  🎁 Resgatar meu prêmio no WhatsApp
-</a>
-</div>
-<div class="legal">
-Promoção válida exclusivamente nas concessionárias Hyundai Top Motors de Bauru, Jaú, Botucatu e Ourinhos, vinculada à compra de veículo 0km. O benefício sorteado só será concedido mediante efetivação da compra durante o período promocional, com negociação formalizada, aprovação de crédito e disponibilidade em estoque. Vantagens são pessoais, intransferíveis, não cumulativas e não convertidas em dinheiro. Válidas apenas no ato da compra, mediante apresentação da raspadinha original e intacta. Participar implica ciência e concordância com o regulamento completo, disponível nas lojas. Promoção válida até 31/08/2025  </div>
+ <audio id="audio-spin" src="assets/sound/spin.mp3" preload="auto"></audio>
+ 
+ <img src="assets/Logo lateral_Branca (1) (1).png" alt="Hyundai Logo" class="logo" />
+ 
+ <h1 class="titulo-janeiro">
+    JANEIRO PREMIADO: <br>
+    <span class="destaque">GIRE E GANHE</span> CONDIÇÕES EXCLUSIVAS
+ </h1>
 
+ <div class="slot-machine">
+   <div class="slot"><div class="reel"></div></div>
+   <div class="slot"><div class="reel"></div></div>
+   <div class="slot"><div class="reel"></div></div>
+ </div>
 
+ <button id="btn-girar" class="button" onclick="girar()">GIRAR AGORA</button>
+ 
+ <div class="result" id="resultado"></div>
 
+ <a id="cta" href="#" class="button" style="display: none; background: #25D366;" target="_blank">
+   🎁 Resgatar no WhatsApp
+ </a>
 
-<script src="script.js"></script>
+ <div id="timer-container" class="timer-container">
+    <div id="aviso-timer" style="color: white; font-size: 18px; text-align: center; margin-bottom: 10px;">
+        Limite de tentativas atingido.<br>Tente novamente em:
+    </div>
+    <div id="timer-text">30:00</div>
+ </div>
+
+ <div class="legal">
+   Promoção válida exclusivamente nas concessionárias Hyundai Top Motors. Válida até 31/01/2026. Consulte regulamento.
+ </div>
+
+ <script src="script.js"></script>
 </body>
 </html>
