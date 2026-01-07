@@ -10,7 +10,7 @@ const premios = [
  "Bônus de R$5.000,00",
  "Bônus de R$3.000,00",
  "Documento Grátis",
- "Tanque Cheio",
+ "Tanque Cheio (limitado a 1 por mês - apenas Alcool)",
  "Super Valorização do Usado"
 ];
 
