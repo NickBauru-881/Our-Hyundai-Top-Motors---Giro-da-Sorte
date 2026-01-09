@@ -128,7 +128,7 @@ function girar() {
          });
      }
 
-     const numeroWhatsApp = '5514997246268'; 
+     const numeroWhatsApp = '5514998579065'; 
      const mensagem = `Oi 👋 Girei a roleta da Hyundai Top Motors e ganhei: *${premio}*! Como resgato? 🤩`;
      const linkWhatsapp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
